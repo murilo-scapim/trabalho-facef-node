@@ -1,0 +1,27 @@
+{
+  "name": "trabalho-facef-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murilo-scapim/trabalho-facef-node.git"
+  },
+  "author": "Murilo Scapim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murilo-scapim/trabalho-facef-node/issues"
+  },
+  "homepage": "https://github.com/murilo-scapim/trabalho-facef-node#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "hapi-router": "^5.0.0",
+    "hapi-sequelizejs": "^3.1.0"
+  }
+}

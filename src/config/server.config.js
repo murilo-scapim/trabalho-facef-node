@@ -1,12 +1,14 @@
 import Hapi from '@hapi/hapi';
-import Env from './enviroment.config';
+import Env from './environment.config';
+import Plugins from './plugins.config';
 
 export const init = async () => {
     const server = Hapi.server({
         port: Env.PORT,
         host: 'localhost'
     });
-
+    await server.register(Plugins(), { once: true });
+    
     await server.initialize();
     return server;
 };

@@ -22,4 +22,4 @@ export default {
     JWT_EXPIRES_IN,
     JWT_SECRET,
     PORT
-}
+};

@@ -11,6 +11,10 @@ export default class CustomersDAO {
         });
     }
 
+    async find(where) {
+        return Cliente.findOne({ where });
+    }
+
     async findByID(id) {
         return await getObjectOr404(Cliente,
             { where: { id } 

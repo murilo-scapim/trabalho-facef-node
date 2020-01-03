@@ -16,8 +16,8 @@ export default class CustomersDAO {
     }
 
     async findByID(id) {
-        return await getObjectOr404(Cliente,
-            { where: { id } 
+        return await getObjectOr404(Cliente, {
+            where: { id } 
         });
     }
 

@@ -24,6 +24,12 @@ export default (sequelize, dataTypes) => {
             as: 'categoria',
             foreignKey: 'categoriaId'
         });
+        models.produto.belongsToMany(models.pedido, {
+            foreignKey: 'produtoId',
+            through: models.produtos_pedido,
+            as: 'pedido',
+            onDelete: 'CASCADE'
+        });
     };
 
     return Produto;

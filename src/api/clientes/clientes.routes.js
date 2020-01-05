@@ -22,6 +22,7 @@ export default [
         path: '/clientes',
         handler: controller.create,
         config: {
+            auth: false,
             validate: Schemas.create
         }
     },
@@ -39,6 +40,15 @@ export default [
         handler: controller.destroy,
         config: {
             validate: Schemas.detail
+        }
+    },
+    {
+        method: 'POST',
+        path: '/clientes/login',
+        handler: controller.login,
+        config: {
+            auth: false,
+            validate: Schemas.login
         }
     }
 ];

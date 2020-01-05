@@ -1,4 +1,5 @@
 import ClientesDAO from './clientes.dao';
+import * as Auth from './../utils/auth.utils';
 import * as brUtils from '@brazilian-utils/validators';
 import Boom from '@hapi/boom';
 
@@ -14,6 +15,17 @@ export default class ClientesBusiness {
         const { id } = params;
 
         return clientesDAO.findByID(id);
+    }
+
+    async login(params) {
+        const { payload } = params;
+        const cliente = await Auth.authenticate(payload);
+        const token = Auth.getToken({
+            id: cliente.id,
+            email: cliente.email
+        });
+
+        return { cliente, token };
     }
 
     async create({ payload }) {

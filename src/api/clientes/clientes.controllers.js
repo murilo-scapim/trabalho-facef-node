@@ -28,4 +28,8 @@ export default class ClientesController {
 
         return h.response().code(NO_CONTENT);
     }
+
+    async login(request, h) {
+        return await clientesBusiness.login(request);
+    }
 }

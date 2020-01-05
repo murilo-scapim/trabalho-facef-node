@@ -1,5 +1,6 @@
 import HapiSequelize from 'hapi-sequelizejs';
 import HapiRouter from 'hapi-router';
+import Auth from './auth.config';
 import Database from './database.config';
 
 export default () => ([
@@ -21,5 +22,8 @@ export default () => ([
         options: {
             routes: 'src/api/**/**.routes.js'
         }
+    },
+    {
+        plugin: Auth
     }
 ]);

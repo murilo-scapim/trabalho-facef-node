@@ -1,10 +1,44 @@
 import { Sequelize } from 'sequelize';
-import ENV from './environment.config';
+import Env from './environment.config';
 
-export default {
-    default: new Sequelize(ENV.DB_NAME, ENV.DB_USERNAME, ENV.DB_PASSWORD, {
+const DATABASES = {
+  test: {
+    default: new Sequelize(Env.DB_NAME, {
+      dialectOptions: {
+        multipleStatements: true,
+        decimalNumbers: true
+      },
+      sync: {
+        force: true
+      },
+      logging: false,
+      define: {
+        freezeTableName: true,
+        paranoid: true
+      }
+    })
+  },
+  development: {
+    default: new Sequelize(Env.DB_NAME, {
+      logging: Env.DEBUG,
+      define: {
+        freezeTableName: true,
+        paranoid: true
+      }
+    })
+  },
+  production: {
+    default: new Sequelize(Env.DB_NAME, Env.DB_USERNAME, Env.DB_PASSWORD, {
+      host: Env.DB_HOST,
+      port: Env.DB_PORT,
       dialect: 'mysql',
-      host: ENV.DB_HOST,
-      port: ENV.DB_PORT,
-    }),
-  };
+      logging: Env.DEBUG,
+      define: {
+        freezeTableName: true,
+        paranoid: true
+      }
+    })
+  },
+};
+
+export default DATABASES[Env.ENV];

@@ -13,7 +13,7 @@ const {
 
 export default {
     ENV: NODE_ENV,
-    DEBUB: JSON.parse(DEBUG),
+    DEBUG: JSON.parse(DEBUG),
     DB_HOST,
     DB_PORT,
     DB_USERNAME,
@@ -22,4 +22,4 @@ export default {
     JWT_EXPIRES_IN,
     JWT_SECRET,
     PORT
-};
+}

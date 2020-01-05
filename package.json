@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node -r esm ./node_modules/.bin/lab -m 1000 -v",
     "start": "node ."
   },
   "repository": {
@@ -21,18 +21,22 @@
   "dependencies": {
     "@brazilian-utils/validators": "^0.1.9",
     "@hapi/boom": "^8.0.1",
+    "@hapi/code": "^8.0.1",
     "@hapi/hapi": "^18.4.0",
     "@hapi/joi": "^16.1.8",
+    "@hapi/lab": "^22.0.3",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "hapi-auth-jwt2": "^8.8.1",
     "hapi-router": "^5.0.0",
     "hapi-sequelizejs": "^3.1.0",
+    "hapi-swagger": "^11.1.0",
     "http-status": "^1.4.2",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.21.3"
+    "sequelize": "^5.21.3",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

@@ -22,7 +22,7 @@
     "@brazilian-utils/validators": "^0.1.9",
     "@hapi/boom": "^8.0.1",
     "@hapi/code": "^8.0.1",
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^16.1.8",
     "@hapi/lab": "^22.0.3",
     "bcryptjs": "^2.4.3",
